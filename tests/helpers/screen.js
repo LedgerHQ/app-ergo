@@ -2,12 +2,18 @@ const makefile = require('./makefile');
 
 const MAIN_FLOW = [
     { header: makefile.appName, body: "is ready" },
+    { header: null, body: "Settings" },
     { header: null, body: "About" },
     { header: null, body: "Quit" }
 ];
 
+const SETTINGS_FLOW = [
+    { header: "Blind signing", body: "Enable transactionblind signing.Enabled" },
+    { header: null, body: "Back" }
+];
+
 const ABOUT_FLOW = [
-    { header: makefile.appName + " App", body: "(c) 2021 Ergo" },
+    { header: makefile.appName + " App", body: "(c) 2024 Ergo" },
     { header: "Version", body: makefile.version },
     { header: null, body: "Back" }
 ];
@@ -206,5 +212,6 @@ class ScreenReader {
 }
 
 exports.MAIN_FLOW = MAIN_FLOW;
+exports.SETTINGS_FLOW = SETTINGS_FLOW;
 exports.ABOUT_FLOW = ABOUT_FLOW;
 exports.ScreenReader = ScreenReader;
