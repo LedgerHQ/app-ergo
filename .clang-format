@@ -1,7 +1,5 @@
----
 BasedOnStyle: Google
 IndentWidth: 4
----
 Language: Cpp
 ColumnLimit: 100
 PointerAlignment: Right
@@ -16,4 +14,3 @@ AllowShortBlocksOnASingleLine: Never
 AllowShortFunctionsOnASingleLine: None
 BinPackArguments: false
 BinPackParameters: false
----
