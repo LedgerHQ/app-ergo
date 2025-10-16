@@ -132,7 +132,7 @@ bool ui_stx_add_transaction_screens(sign_transaction_ui_sign_confirm_ctx_t* ctx,
     // blind tx check
     if (blind_signing_required) {
         if (!N_storage.blind_signing_enabled) {
-            nbgl_useCaseChoice(&C_Warning_64px,
+            nbgl_useCaseChoice(&LARGE_WARNING_ICON,
                                "This transaction cannot be clear-signed",
                                "Enable blind signing in the settings to sign this transaction.",
                                "Go to settings",
@@ -192,7 +192,7 @@ bool ui_stx_add_transaction_screens(sign_transaction_ui_sign_confirm_ctx_t* ctx,
     if (blind_signing_required) {
         nbgl_useCaseReviewBlindSigning(TYPE_TRANSACTION,
                                        &pair_list,
-                                       &C_app_logo_64px,
+                                       &ICON_APP_HOME,
                                        "Review transaction",
                                        base_ctx->ui_approve.bip32_path,
                                        "Sign transaction",
@@ -201,7 +201,7 @@ bool ui_stx_add_transaction_screens(sign_transaction_ui_sign_confirm_ctx_t* ctx,
     } else {
         nbgl_useCaseReview(TYPE_TRANSACTION,
                            &pair_list,
-                           &C_app_logo_64px,
+                           &ICON_APP_HOME,
                            "Review transaction",
                            base_ctx->ui_approve.bip32_path,
                            "Sign transaction",

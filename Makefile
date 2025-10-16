@@ -42,6 +42,7 @@ ICON_NANOX = icons/app_14px.gif
 ICON_NANOSP = icons/app_14px.gif
 ICON_STAX = icons/app_32px.gif
 ICON_FLEX = icons/app_40px.gif
+ICON_APEX_P = icons/app_32px_apex.png
 
 # Application allowed derivation curves.
 # Possibles curves are: secp256k1, secp256r1, ed25519 and bls12381g1

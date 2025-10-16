@@ -94,7 +94,7 @@ int ui_display_address(derive_address_ctx_t* ctx,
         // Confirm Send Address
         nbgl_useCaseReviewLight(STATUS_TYPE_ADDRESS_VERIFIED,
                                 &pair_list,
-                                &C_app_logo_64px,
+                                &ICON_APP_HOME,
                                 "Export Ergo address",
                                 NULL,
                                 "Confirm address export",
@@ -103,7 +103,7 @@ int ui_display_address(derive_address_ctx_t* ctx,
         // Confirm Address
         nbgl_useCaseAddressReview(addr_buf,
                                   &pair_list,
-                                  &C_app_logo_64px,
+                                  &ICON_APP_HOME,
                                   "Verify Ergo address",
                                   NULL,
                                   ui_display_address_confirm);

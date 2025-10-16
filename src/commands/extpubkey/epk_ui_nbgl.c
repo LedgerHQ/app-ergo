@@ -63,7 +63,7 @@ int ui_display_account(extended_public_key_ctx_t* ctx,
     memmove(ctx->raw_public_key, raw_pub_key, PUBLIC_KEY_LEN);
     memmove(ctx->chain_code, chain_code, CHAIN_CODE_LEN);
 
-    nbgl_useCaseChoice(&C_app_logo_64px,
+    nbgl_useCaseChoice(&ICON_APP_HOME,
                        "Export Extended Public Key",
                        pk_appid,
                        "Confirm",
