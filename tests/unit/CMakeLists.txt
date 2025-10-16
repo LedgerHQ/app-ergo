@@ -27,6 +27,7 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -pedantic -g -O0 --coverag
 set(GCC_COVERAGE_LINK_FLAGS "--coverage -lgcov")
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
+set(ERGO_PATH ../..)
 
 # guard against in-source builds
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
@@ -38,14 +39,13 @@ add_compile_definitions(TEST)
 # force include macro helpers into all files
 add_definitions(-include macro_helpers.h)
 
-include_directories(BEFORE SYSTEM ../src utils)
+include_directories(BEFORE SYSTEM ${ERGO_PATH}/src utils)
 
 file(GLOB SHIMS_SRC utils/*.c)
 
 # CX library shim for testing
 add_library(sdk_shims SHARED ${SHIMS_SRC})
 
-set(ERGO_PATH ../..)
 
 add_library(bip32_ext SHARED ${ERGO_PATH}/src/common/bip32_ext.c)
 add_library(rwbuffer SHARED ${ERGO_PATH}/src/common/buffer_ext.c ${ERGO_PATH}/src/common/rwbuffer.c)

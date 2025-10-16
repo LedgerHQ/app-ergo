@@ -207,3 +207,17 @@ void os_perso_derive_node_with_seed_key(unsigned int mode,
 
 void assert_exit(bool confirm) {
 }
+
+void io_seph_ux_display_bagl_element(const bagl_element_t *element) {
+}
+
+void screen_update(void) {
+}
+
+unsigned short bagl_compute_line_width(unsigned short font_id,
+                                       unsigned short width,
+                                       const void *text,
+                                       unsigned char text_length,
+                                       unsigned char text_encoding) {
+    return 0;
+}

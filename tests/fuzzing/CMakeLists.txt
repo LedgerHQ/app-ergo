@@ -99,15 +99,17 @@ set(ERGO_SOURCE
     ${BOLOS_SDK}/lib_standard_app/read.c
     ${BOLOS_SDK}/lib_standard_app/write.c
     ${BOLOS_SDK}/lib_standard_app/format.c
+    ${BOLOS_SDK}/lib_standard_app/buffer.c
+    ${BOLOS_SDK}/lib_standard_app/varint.c
+    ${BOLOS_SDK}/lib_standard_app/bip32.c
 )
 
 file(GLOB SHIMS_SRC ${ERGO_PATH}/unit-tests/utils/*.c)
 
 include_directories(
     ${BOLOS_SDK}/include
-    # TO-DO: uncomment when code patched for revamped IO
-    #${BOLOS_SDK}/io/include
-    #${BOLOS_SDK}/io_legacy/include
+    ${BOLOS_SDK}/io/include
+    ${BOLOS_SDK}/io_legacy/include
     ${BOLOS_SDK}/target/nanox/include
     ${BOLOS_SDK}/lib_cxng/include
     ${BOLOS_SDK}/lib_bagl/include
@@ -131,9 +133,11 @@ include_directories(
 add_compile_definitions(
     FUZZING
     HAVE_BAGL
+    HAVE_FONTS
     BAGL_WIDTH=128
     BAGL_HEIGHT=64
     HAVE_UX_FLOW
+    REVAMPED_IO
 
     APPNAME=\"Ergo\"
     APPVERSION=\"1.0.0\"

@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <string.h>
+#include <assert.h>
 
 #ifdef FUZZING
 #define explicit_bzero(addr, size) memset((addr), 0, (size))
@@ -11,7 +12,7 @@
 // Code taken from: https://www.hackersdelight.org/hdcodetxt/crc.c.txt option crc32b
 
 uint32_t cx_crc32(const uint8_t* inBuffer, size_t inSize) {
-    ASSERT(inSize < BUFFER_SIZE_PARANOIA);
+    assert(inSize < BUFFER_SIZE_PARANOIA);
 
     uint32_t byte, crc, mask;
 
