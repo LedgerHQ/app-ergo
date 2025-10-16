@@ -21,7 +21,7 @@ static inline void stx_amounts_init(sign_transaction_amounts_ctx_t *ctx) {
 
 static inline uint16_t stx_amounts_add_input(sign_transaction_amounts_ctx_t *ctx, uint64_t value) {
     // Add input amount to the stored value
-    return checked_add_u64(ctx->value, value, &ctx->value) ? SW_OK : SW_U64_OVERFLOW;
+    return checked_add_u64(ctx->value, value, &ctx->value) ? SWO_SUCCESS : SW_U64_OVERFLOW;
 }
 
 ergo_tx_serializer_input_result_e stx_amounts_add_input_token(

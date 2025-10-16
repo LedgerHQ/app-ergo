@@ -7,11 +7,11 @@
 #include "../common/rwbuffer.h"
 
 static inline int res_ok() {
-    return io_send_sw(SW_OK);
+    return io_send_sw(SWO_SUCCESS);
 }
 
 static inline int res_ok_data(const rw_buffer_t* data) {
-    return io_send_response_buffer(&data->read, SW_OK);
+    return io_send_response_buffer(&data->read, SWO_SUCCESS);
 }
 
 static inline int res_ui_busy() {
@@ -19,7 +19,7 @@ static inline int res_ui_busy() {
 }
 
 static inline int res_deny() {
-    return io_send_sw(SW_DENY);
+    return io_send_sw(SWO_CONDITIONS_NOT_SATISFIED);
 }
 
 static inline int res_error(uint16_t code) {

@@ -27,7 +27,7 @@ static inline uint16_t read_bip32_path(buffer_t *input,
                                        uint8_t *path_len) {
     if (!buffer_read_u8(input, path_len)) return SW_BUFFER_ERROR;
     if (!buffer_read_bip32_path(input, path, *path_len)) return SW_BUFFER_ERROR;
-    return SW_OK;
+    return SWO_SUCCESS;
 }
 
 static inline uint16_t bip32_public_key(uint32_t path[MAX_BIP32_PATH],
@@ -43,7 +43,7 @@ static inline uint16_t bip32_public_key(uint32_t path[MAX_BIP32_PATH],
     if (crypto_generate_public_key(path, path_len, pub_key, NULL) != 0) {
         return SW_INTERNAL_CRYPTO_ERROR;
     }
-    return SW_OK;
+    return SWO_SUCCESS;
 }
 
 static inline int show_output_screen_if_needed(sign_transaction_ctx_t *ctx) {
@@ -284,7 +284,7 @@ int handler_sign_transaction(buffer_t *cdata,
     switch (subcommand) {
         case SIGN_TRANSACTION_SUBCOMMAND_SIGN_PK:
             if (session_or_token != 0x01 && session_or_token != 0x02) {
-                return res_error(SW_WRONG_P1P2);
+                return res_error(SWO_INCORRECT_P1_P2);
             }
             app_set_current_command(CMD_SIGN_TRANSACTION);
 

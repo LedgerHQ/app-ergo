@@ -99,7 +99,7 @@ static inline uint16_t output_info_print_address(const sign_transaction_output_i
         default:
             return SW_BAD_STATE;
     }
-    return SW_OK;
+    return SWO_SUCCESS;
 }
 
 uint16_t ui_stx_display_output_state(uint8_t screen, char* title, char* text, void* context);
