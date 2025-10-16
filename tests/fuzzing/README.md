@@ -33,7 +33,7 @@ sudo docker run --rm -ti --user "$(id -u):$(id -g)" -v "$(realpath .):/app" ghcr
 Once in the container, go into the `fuzzing` folder to compile the fuzzer:
 
 ```console
-cd fuzzing
+cd tests/fuzzing
 
 # cmake initialization
 cmake -DBOLOS_SDK=/opt/ledger-secure-sdk -DCMAKE_C_COMPILER=/usr/bin/clang -Bbuild -H.

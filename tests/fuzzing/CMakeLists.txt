@@ -35,7 +35,7 @@ add_compile_options(-g)
 
 set(SDK_PATH ${BOLOS_SDK})
 set(UX_PATH ${SDK_PATH}/lib_ux)
-set(ERGO_PATH ..)
+set(ERGO_PATH ../..)
 
 set(UX_SOURCE
     ${UX_PATH}/src/ux_flow_engine.c
