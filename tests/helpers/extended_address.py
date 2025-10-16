@@ -1,6 +1,6 @@
+from typing import List
 from ergo_lib_python.chain import NetworkPrefix, Address
 from ergo_lib_python.wallet import DerivationPath
-from typing import List
 
 class ExtendedAddress:
     def __init__(self, network: NetworkPrefix, address: str, path:List[int]):

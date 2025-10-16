@@ -7,5 +7,5 @@ from utils import verify_version
 def test_fetch_version(backend: BackendInterface) -> None:
     client = ErgoCommandSender(backend)
     rapdu = client.get_version()
-    MAJOR, MINOR, PATCH, DEBUG = unpack_get_version_response(rapdu.data)
+    MAJOR, MINOR, PATCH, _ = unpack_get_version_response(rapdu.data)
     verify_version(f"{MAJOR}.{MINOR}.{PATCH}")

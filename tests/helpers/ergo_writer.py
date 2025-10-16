@@ -18,7 +18,7 @@ class ErgoWriter:
         return self
 
     def write_auth_token(self, token: int | None = None):
-        if(token == None):
+        if token is None:
             return self
 
         data = token.to_bytes(4, byteorder="big")
@@ -28,7 +28,7 @@ class ErgoWriter:
         self.index += size
 
         return self
-    
+
     def write_hex(self, val: str):
         data = bytearray.fromhex(val)
 
@@ -37,7 +37,7 @@ class ErgoWriter:
         self.index += size
 
         return self
-    
+
     def write_uint16(self, val: int):
         data = val.to_bytes(2, byteorder="big")
 
@@ -46,7 +46,7 @@ class ErgoWriter:
         self.index += size
 
         return self
-    
+
     def write_uint32(self, val: int):
         data = val.to_bytes(4, byteorder="big")
 
@@ -55,7 +55,7 @@ class ErgoWriter:
         self.index += size
 
         return self
-    
+
     def write_uint64(self, val: int):
         data = val.to_bytes(8, byteorder="big")
 
@@ -64,7 +64,7 @@ class ErgoWriter:
         self.index += size
 
         return self
-    
+
     def write_bytes(self, val: bytes):
         size = len(val)
         self.buffer[self.index:self.index + size] = val
@@ -72,9 +72,9 @@ class ErgoWriter:
 
         return self
 
-    
+
     def get_position(self) -> int:
         return self.index
-    
+
     def get_buffer(self) -> bytes:
         return self.buffer[0:self.index]

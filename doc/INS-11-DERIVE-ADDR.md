@@ -1,11 +1,14 @@
 # 0x11 - Derive address
 
-Derive the address for a given BIP44 path and return or show it to the user. This call is intended for address verification purposes (i.e., matching the address on Ledger with the one on the dApp/Wallet screen).
+Derive the address for a given BIP44 path and return or show it to the user.
+This call is intended for address verification purposes
+(i.e., matching the address on Ledger with the one on the dApp/Wallet screen).
 
 The address can’t be that of an account, or of external/internal address chain root, i.e. it needs to have:
-* path_len >= 5,
-* path[2] is hardened (account), and
-* path[3] in [0,1] (internal/external chain)
+
+- path_len >= 5,
+- path[2] is hardened (account), and
+- path[3] in [0,1] (internal/external chain)
 
 ## Command
 
@@ -14,8 +17,9 @@ The address can’t be that of an account, or of external/internal address chain
 | 0x11 | 0x01 - return <br> 0x02 - display | 0x01 - without token <br> 0x02 - with token | variable | see below |
 
 ### Data
+
 | Field | Size (B) | Description |
-| --- | --- | --- | 
+| --- | --- | --- |
 | Network Type | 1 | Value: 0x00-0xFC (0-252). Network Type |
 | BIP32 path length | 1 | Value: 0x05-0x0A (5-10). Count of path components |
 | First derivation index | 4 | Big-endian. Value: 44’ |

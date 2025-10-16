@@ -20,9 +20,9 @@ You can use for this the container `ghcr.io/ledgerhq/ledger-app-builder/ledger-a
 
 ```shell
 docker pull ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-lite:latest
-cd <your app repository>                        # replace <appname> with the name of your app, (eg ledger-app-ergo)
+cd <your app repository>
 docker run --user "$(id -u)":"$(id -g)" --rm -ti -v "$(realpath .):/app" --privileged -v "/dev/bus/usb:/dev/bus/usb" ledger-app-builder-lite:latest
-make clean && make BOLOS_SDK=$<device>_SDK      # replace <device> with one of [NANOX, NANOSP, STAX, FLEX]
+make clean && make BOLOS_SDK=$<device>_SDK      # replace <device> with the targeted device
 exit
 ```
 
@@ -43,9 +43,9 @@ You can use for this the container `ghcr.io/ledgerhq/ledger-app-builder/ledger-a
 
 ```shell
 docker pull ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-lite:latest
-cd app-<appname>/                                   # replace <appname> with the name of your app, (eg ledger-app-ergo)
+cd app-<appname>
 docker run --user "$(id -u)":"$(id -g)" --rm -ti -v "$(realpath .):/app" --privileged -v "/dev/bus/usb:/dev/bus/usb" ledger-app-builder-lite:latest
-make clean && make BOLOS_SDK=$<device>_SDK load     # replace <device> with one of [NANOX, NANOSP, STAX, FLEX]
+make clean && make BOLOS_SDK=$<device>_SDK load     # replace <device> with the targeted device
 exit
 ```
 
@@ -72,9 +72,15 @@ Standard useful pytest options
 Custom pytest options
 
 ```shell
-    --device <device>           run the test on the specified device [nanox,nanosp,stax,flex,all]. This parameter is mandatory
-    --backend <backend>         run the tests against the backend [speculos, ledgercomm, ledgerwallet]. Speculos is the default
-    --display                   on Speculos, enables the display of the app screen using QT
-    --golden_run                on Speculos, screen comparison functions will save the current screen instead of comparing
-    --log_apdu_file <filepath>  log all apdu exchanges to the file in parameter. The previous file content is erased
+    --device <device>
+    --backend <backend>
+    --no-nav                         Disable the navigation
+    --display                        Pops up a Qt interface displaying either the emulated device (Speculos backend) or
+                                       the expected screens and actions (physical backend)
+    --golden_run                     Do not compare the snapshots during testing, but instead save the live ones.
+                                       Will only work with 'speculos' as the backend
+    --pki_prod                       Have Speculos accept prod PKI certificates instead of test
+    --log_apdu_file=[LOG_APDU_FILE]  Log the APDU in a file. If no pattern provided, uses 'apdu_xxx.log'.
+    --seed=SEED                      Set a custom seed
+    --setup={default}                Specify the setup fixture (e.g., 'prod_build')
 ```

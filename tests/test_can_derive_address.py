@@ -9,10 +9,10 @@ def test_can_derive_address(backend: BackendInterface, scenario_navigator: Navig
     address = ADDRESS_0
 
     client = ErgoCommandSender(backend)
-    with client.derive_address(address.network.__int__(), address.path.__str__()):
+    with client.derive_address(int(address.network), str(address.path)):
         scenario_navigator.address_review_approve(custom_screen_text="Approve")
 
     response = client.get_async_response().data
     compare = base58.b58decode(address.address.to_str(address.network))
-    
+
     assert response == compare

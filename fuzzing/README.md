@@ -4,7 +4,8 @@
 
 Fuzzing allows us to test how a program behaves when provided with invalid, unexpected, or random data as input.
 
-In the case of `ledger-app-ergo` we want to test the code that is responsible for handling attest input, derive address, ext pubkey and sign tx APDU handlers.
+In the case of `ledger-app-ergo` we want to test the code that is responsible for handling attest input,
+derive address, ext pubkey and sign tx APDU handlers.
 
 If the application crashes, or a [sanitizer](https://github.com/google/sanitizers) detects any kind of
 access violation, the fuzzing process is stopped, a report regarding the vulnerability is shown,

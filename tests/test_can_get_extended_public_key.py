@@ -1,18 +1,22 @@
+from ledgered.devices import Device
 from ragger.backend.interface import BackendInterface
-from ragger.navigator.navigation_scenario import NavigateWithScenario, NavigationScenarioData, Navigator, Device, UseCase
+from ragger.navigator.navigation_scenario import NavigateWithScenario, NavigationScenarioData, Navigator, UseCase
 
 from application_client.ergo_command_sender import ErgoCommandSender
 from helpers.data import ACCOUNT
 
-def test_can_get_extended_public_key(backend: BackendInterface, device: Device, scenario_navigator: NavigateWithScenario, navigator: Navigator) -> None:
+def test_can_get_extended_public_key(backend: BackendInterface,
+                                     device: Device,
+                                     scenario_navigator: NavigateWithScenario,
+                                     navigator: Navigator) -> None:
     client = ErgoCommandSender(backend)
-    with client.ext_pub_key(ACCOUNT.path.__str__()):
+    with client.ext_pub_key(str(ACCOUNT.path)):
 
         scenario = NavigationScenarioData(device,
                                           backend,
                                           UseCase.ADDRESS_CONFIRMATION,
                                           approve=True)
-        
+
         if not device.is_nano:
             scenario.validation.pop()
 

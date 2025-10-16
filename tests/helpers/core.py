@@ -2,8 +2,6 @@ from ergo_lib_python.transaction import UnsignedTransaction, Transaction, Unsign
 from ergo_lib_python.chain import Address
 from ergo_lib_python.verifier import verify_signature
 
-from helpers.data import ADDRESS_0, NETWORK
-
 def chunk(array: list, size: int) -> list:
     if not array:
         return []
@@ -25,12 +23,12 @@ def uniq(array: list) -> list:
 def verify_signatures(unsigned: UnsignedTransaction, signatures: list[bytes], from_address: Address):
     signed = Transaction.from_unsigned_tx(unsigned, signatures)
 
-    inputs:list[Input] = []
+    list_inputs: list[Input] = []
     for sinp in signed.inputs:
-        input = UnsignedInput(sinp.box_id)
-        input = Input.from_unsigned_input(input, bytes())
-        inputs.append(input)
+        input_elt = UnsignedInput(sinp.box_id)
+        input_elt = Input.from_unsigned_input(input_elt, bytes())
+        list_inputs.append(input_elt)
 
-    unsigned_tx_for_prove = Transaction(inputs, signed.data_inputs, signed.output_candidates)
-    
-    return verify_signature(from_address, unsigned_tx_for_prove.__bytes__(), signatures[0])
+    unsigned_tx_for_prove = Transaction(list_inputs, signed.data_inputs, signed.output_candidates)
+
+    return verify_signature(from_address, bytes(unsigned_tx_for_prove), signatures[0])

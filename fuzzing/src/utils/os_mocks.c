@@ -63,7 +63,7 @@ void *pic(void *linked_addr) {
     return linked_addr;
 }
 // void ui_idle(){};
-int io_send_response_buffers(const buffer_t *rdatalist, size_t count, uint16_t sw) { 
+int io_send_response_buffers(const buffer_t *rdatalist, size_t count, uint16_t sw) {
     return 0;
 }
 void halt() {
@@ -80,8 +80,8 @@ unsigned short io_seph_recv(unsigned char *buffer, unsigned short maxlength, uns
     return 0;
 };
 cx_err_t cx_blake2b_256_hash_iovec(const cx_iovec_t *iovec,
-    size_t            iovec_len,
-    uint8_t           digest[static CX_BLAKE2B_256_SIZE]) {
+                                   size_t iovec_len,
+                                   uint8_t digest[static CX_BLAKE2B_256_SIZE]) {
     return CX_OK;
 }
 cx_err_t cx_blake2b_init_no_throw(cx_blake2b_t *hash, size_t size) {
@@ -95,16 +95,16 @@ cx_err_t cx_hash_no_throw(cx_hash_t *hash,
                           size_t out_len) {
     return CX_OK;
 };
-cx_err_t cx_ecfp_init_private_key_no_throw(cx_curve_t             curve,
-    const uint8_t         *raw_key,
-    size_t                 key_len,
-    cx_ecfp_private_key_t *key) {
+cx_err_t cx_ecfp_init_private_key_no_throw(cx_curve_t curve,
+                                           const uint8_t *raw_key,
+                                           size_t key_len,
+                                           cx_ecfp_private_key_t *key) {
     return CX_OK;
 };
-cx_err_t cx_ecfp_generate_pair_no_throw(cx_curve_t             curve,
-    cx_ecfp_public_key_t  *public_key,
-    cx_ecfp_private_key_t *private_key,
-    bool                   keep_private) {
+cx_err_t cx_ecfp_generate_pair_no_throw(cx_curve_t curve,
+                                        cx_ecfp_public_key_t *public_key,
+                                        cx_ecfp_private_key_t *private_key,
+                                        bool keep_private) {
     return CX_OK;
 };
 void cx_rng_no_throw(uint8_t *buffer, size_t len) {
@@ -121,21 +121,24 @@ cx_err_t cx_sha3_init_no_throw(cx_sha3_t *hash, size_t size) {
 cx_err_t cx_math_cmp_no_throw(const uint8_t *a, const uint8_t *b, size_t length, int *diff) {
     return CX_OK;
 };
-cx_err_t cx_ecfp_scalar_mult_no_throw(cx_curve_t curve, uint8_t *P, const uint8_t *k, size_t k_len) {
+cx_err_t cx_ecfp_scalar_mult_no_throw(cx_curve_t curve,
+                                      uint8_t *P,
+                                      const uint8_t *k,
+                                      size_t k_len) {
     return CX_OK;
 };
-cx_err_t cx_math_multm_no_throw(uint8_t       *r,
-    const uint8_t *a,
-    const uint8_t *b,
-    const uint8_t *m,
-    size_t         len) {
+cx_err_t cx_math_multm_no_throw(uint8_t *r,
+                                const uint8_t *a,
+                                const uint8_t *b,
+                                const uint8_t *m,
+                                size_t len) {
     return CX_OK;
 };
-cx_err_t cx_math_addm_no_throw(uint8_t       *r,
-    const uint8_t *a,
-    const uint8_t *b,
-    const uint8_t *m,
-    size_t         len) {
+cx_err_t cx_math_addm_no_throw(uint8_t *r,
+                               const uint8_t *a,
+                               const uint8_t *b,
+                               const uint8_t *m,
+                               size_t len) {
     return CX_OK;
 };
 unsigned int io_seph_is_status_sent(void) {
@@ -143,15 +146,13 @@ unsigned int io_seph_is_status_sent(void) {
 };
 
 size_t cx_hmac_sha256(const uint8_t *key,
-                      size_t         key_len,
+                      size_t key_len,
                       const uint8_t *in,
-                      size_t         len,
-                      uint8_t       *out,
-                      size_t         out_len) {
+                      size_t len,
+                      uint8_t *out,
+                      size_t out_len) {
     return out_len;
 }
-
-
 
 bolos_bool_t os_perso_isonboarded(void) {
     return (bolos_bool_t) BOLOS_UX_OK;
@@ -205,5 +206,4 @@ void os_perso_derive_node_with_seed_key(unsigned int mode,
 }
 
 void assert_exit(bool confirm) {
-    
 }

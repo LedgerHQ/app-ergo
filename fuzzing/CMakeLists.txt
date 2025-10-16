@@ -113,7 +113,7 @@ include_directories(
     ${BOLOS_SDK}/lib_bagl/include
     ${BOLOS_SDK}/lib_ux/include
     ${BOLOS_SDK}/lib_standard_app
-    
+
     ${ERGO_PATH}/src
     ${ERGO_PATH}/src/commands
     ${ERGO_PATH}/src/commands/attestinput

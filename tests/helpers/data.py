@@ -4,6 +4,7 @@ from ergo_lib_python.wallet import DerivationPath
 from helpers.extended_address import ExtendedAddress
 from helpers.account import Account
 
+# pylint: disable=line-too-long
 NETWORK = NetworkPrefix.Mainnet
 ACCOUNT = Account(
     "03c24e55008b523ccaf03b6c757f88c4881ef3331a255b76d2e078016c69c3dfd4",
@@ -21,3 +22,4 @@ ADDRESS_SCRIPT_HASH = "72H58ETmT5dN7GfQnHbAfo2WLPuGxcpoP6QkQJn"
 
 MINER_FEE_TREE  = "1005040004000e36100204a00b08cd0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798ea02d192a39a8cc7a701730073011001020402d19683030193a38cc7b2a57300000193c2b2a57301007473027303830108cdeeac93b1a57304"
 TX_ID           = "0000000000000000000000000000000000000000000000000000000000000000"
+# pylint: enable=line-too-long

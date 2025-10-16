@@ -2,7 +2,7 @@ from ledgered.devices import Device
 from ragger.navigator import Navigator, NavInsID, NavIns
 from ragger.firmware.touch import positions
 from ragger.backend.interface import BackendInterface
-from ragger.navigator.navigation_scenario import NavigationScenarioData, Navigator, Device, UseCase
+from ragger.navigator.navigation_scenario import NavigationScenarioData, UseCase
 
 def enable_blind_signing(device: Device, navigator: Navigator):
     # Navigate in the main menu
@@ -35,7 +35,7 @@ def confirm_approve(device: Device, backend: BackendInterface, navigator: Naviga
                                           backend,
                                           UseCase.ADDRESS_CONFIRMATION,
                                           approve=True)
-        
+
     if not device.is_nano:
         scenario.validation.pop()
 

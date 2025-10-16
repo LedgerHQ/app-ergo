@@ -1,18 +1,11 @@
-from ragger.conftest import configuration
 import random
-import os
+from ragger.conftest import configuration
 
 ###########################
 ### CONFIGURATION START ###
 ###########################
 
-
-__location__ = os.path.realpath(
-    os.path.join(os.getcwd(), os.path.dirname(__file__)))
-with open(os.path.join(__location__, "seed.txt"), "r") as file:
-    MNEMONIC = file.read()
-
-configuration.OPTIONAL.CUSTOM_SEED = MNEMONIC
+configuration.OPTIONAL.CUSTOM_SEED = "jaguar swallow dinner course lend surround warm robot grape pear skate relief"
 
 #########################
 ### CONFIGURATION END ###

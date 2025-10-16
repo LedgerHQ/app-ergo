@@ -8,7 +8,6 @@
 #include <buffer_ext.h>
 #include "commands/attestinput/ainpt_handler.h"
 
-
 uint8_t G_io_apdu_buffer[IO_APDU_BUFFER_SIZE];
 
 int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
