@@ -1,30 +1,19 @@
 # Ledger Ergo Application
 
-This is a Ergo application for the Ledger Nano S+/X/Stax/Flex.
+This is a Ergo application for the Ledger devices.
 
 ## Prerequisite
 
-Be sure to have your environment correctly set up (see [Getting Started](https://developers.ledger.com/docs/nano-app/introduction/))
+Be sure to have your environment correctly set up (see [Getting Started](https://developers.ledger.com/docs/device-app/getting-started))
 and [ledgerblue](https://pypi.org/project/ledgerblue/) and installed.
 
-If you want to benefit from [vscode](https://code.visualstudio.com/) integration,
-it's recommended to move the toolchain in `/opt` and set `BOLOS_ENV` environment variable as follows
-
-```bash
-BOLOS_ENV=/opt/bolos-devenv
-```
-
-and do the same with `BOLOS_SDK` environment variable
-
-```bash
-BOLOS_SDK=/opt/bolos-sdk/nanosplus-secure-sdk
-```
+It is recommended to use [VSCode](https://code.visualstudio.com/) to build/test/load the application.
 
 ## Compilation
 
 ```bash
-make DEBUG=1  # compile optionally with PRINTF
-make load     # load the app on the Nano using ledgerblue
+BOLOS_ENV=/opt/stax-ledger-sdk make DEBUG=1  # compile optionally with PRINTF
+BOLOS_ENV=/opt/stax-ledger-sdk make load     # load the app on the Nano using ledgerblue
 ```
 
 ## Documentation
