@@ -1,29 +1,7 @@
 #pragma once
 
-/**
- * Status word for success.
- */
-#define SW_OK 0x9000
-/**
- * Status word for denied by user.
- */
-#define SW_DENY 0x6985
-/**
- * Status word for incorrect P1 or P2.
- */
-#define SW_WRONG_P1P2 0x6A86
-/**
- * Status word for either wrong Lc or length of APDU command less than 5.
- */
-#define SW_WRONG_APDU_DATA_LENGTH 0x6A87
-/**
- * Status word for unknown command with this INS.
- */
-#define SW_INS_NOT_SUPPORTED 0x6D00
-/**
- * Status word for instruction class is different than CLA.
- */
-#define SW_CLA_NOT_SUPPORTED 0x6E00
+#include "status_words.h"
+
 /**
  * Status word for busy state.
  */
@@ -31,15 +9,11 @@
 /**
  * Status word for wrong response length (buffer too small or too big).
  */
-#define SW_WRONG_RESPONSE_LENGTH 0xB001
-
-#define SW_BAD_SESSION_ID 0xB002
-
-#define SW_WRONG_SUBCOMMAND 0xB003
-
+#define SW_WRONG_RESPONSE_LENGTH   0xB001
+#define SW_BAD_SESSION_ID          0xB002
+#define SW_WRONG_SUBCOMMAND        0xB003
 #define SW_SCREENS_BUFFER_OVERFLOW 0xB004
-
-#define SW_BAD_STATE 0xB0FF
+#define SW_BAD_STATE               0xB0FF
 
 #define SW_BAD_TOKEN_ID               0xE001
 #define SW_BAD_TOKEN_VALUE            0xE002

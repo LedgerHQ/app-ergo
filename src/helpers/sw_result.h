@@ -7,9 +7,9 @@
 static inline uint16_t sw_from_tx_full_result(ergo_tx_serializer_full_result_e res) {
     switch (res) {
         case ERGO_TX_SERIALIZER_FULL_RES_OK:
-            return SW_OK;
+            return SWO_SUCCESS;
         case ERGO_TX_SERIALIZER_FULL_RES_MORE_DATA:
-            return SW_OK;
+            return SWO_SUCCESS;
         case ERGO_TX_SERIALIZER_FULL_RES_ERR_BAD_TOKEN_ID:
             return SW_BAD_TOKEN_ID;
         case ERGO_TX_SERIALIZER_FULL_RES_ERR_BAD_TOKEN_VALUE:
@@ -58,9 +58,9 @@ static inline uint16_t sw_from_tx_full_result(ergo_tx_serializer_full_result_e r
 static inline uint16_t sw_from_tx_box_result(ergo_tx_serializer_box_result_e res) {
     switch (res) {
         case ERGO_TX_SERIALIZER_BOX_RES_OK:
-            return SW_OK;
+            return SWO_SUCCESS;
         case ERGO_TX_SERIALIZER_BOX_RES_MORE_DATA:
-            return SW_OK;
+            return SWO_SUCCESS;
         case ERGO_TX_SERIALIZER_BOX_RES_ERR_BAD_TOKEN_INDEX:
             return SW_BAD_TOKEN_INDEX;
         case ERGO_TX_SERIALIZER_BOX_RES_ERR_BAD_TOKEN_ID:

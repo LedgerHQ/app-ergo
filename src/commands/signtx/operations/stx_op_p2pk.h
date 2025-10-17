@@ -115,7 +115,7 @@ static inline bool stx_operation_p2pk_is_tx_finished(sign_transaction_operation_
  * Display bip44 path and application access_token on the device
  * and ask confirmation to proceed.
  *
- * @return SW_OK if success, error code otherwise.
+ * @return SWO_SUCCESS if success, error code otherwise.
  *
  */
 uint16_t ui_stx_operation_p2pk_show_token_and_path(sign_transaction_operation_p2pk_ctx_t *ctx,
@@ -126,7 +126,7 @@ uint16_t ui_stx_operation_p2pk_show_token_and_path(sign_transaction_operation_p2
 /**
  * Display output confirmation screen
  *
- * @return SW_OK if success, error code otherwise.
+ * @return SWO_SUCCESS if success, error code otherwise.
  *
  */
 uint16_t ui_stx_operation_p2pk_show_output_confirm_screen(
@@ -135,7 +135,7 @@ uint16_t ui_stx_operation_p2pk_show_output_confirm_screen(
 /**
  * Display transaction confirmation screen
  *
- * @return SW_OK if success, error code otherwise.
+ * @return SWO_SUCCESS if success, error code otherwise.
  *
  */
 uint16_t ui_stx_operation_p2pk_show_confirm_screen(sign_transaction_operation_p2pk_ctx_t *ctx);
