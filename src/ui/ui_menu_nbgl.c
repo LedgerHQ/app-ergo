@@ -1,10 +1,10 @@
 #ifdef HAVE_NBGL
 
-#include "ui_menu.h"
 #include <ux.h>
 #include <nbgl_use_case.h>
 #include <os.h>
 #include <context.h>
+#include "ui_menu.h"
 
 #define APPTAGLINE   "This app enables signing\ntransactions on the Ergo\nnetwork."
 #define APPCOPYRIGHT "Ergo App (c) 2024"
@@ -67,7 +67,7 @@ void ui_menu_main() {
 #endif
 
     nbgl_useCaseHomeAndSettings(APPNAME,
-                                &C_app_logo_64px,
+                                &ICON_APP_HOME,
                                 APPTAGLINE,
                                 INIT_HOME_PAGE,
                                 &settingContents,
@@ -78,7 +78,7 @@ void ui_menu_main() {
 
 void ui_menu_about() {
     nbgl_useCaseHomeAndSettings(APPNAME,
-                                &C_app_logo_64px,
+                                &ICON_APP_HOME,
                                 APPTAGLINE,
                                 0,
                                 &settingContents,

@@ -35,7 +35,7 @@ void bnnn_paging_edgecase() {
         uint16_t res = G_dynamic_flow_context.show_cb(G_dynamic_flow_context.current_screen,      \
                                                       (char *) G_ui_dynamic_step_params[0].title, \
                                                       (char *) G_ui_dynamic_step_params[0].text); \
-        if (res == SW_OK) {                                                                       \
+        if (res == SWO_SUCCESS) {                                                                 \
             switch_method();                                                                      \
         } else {                                                                                  \
             app_set_current_command(CMD_NONE);                                                    \

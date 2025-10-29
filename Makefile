@@ -30,7 +30,7 @@ APPNAME = "Ergo"
 # Application version
 APPVERSION_M = 0
 APPVERSION_N = 0
-APPVERSION_P = 8
+APPVERSION_P = 9
 APPVERSION = "$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)"
 
 # Application source files
@@ -42,6 +42,7 @@ ICON_NANOX = icons/app_14px.gif
 ICON_NANOSP = icons/app_14px.gif
 ICON_STAX = icons/app_32px.gif
 ICON_FLEX = icons/app_40px.gif
+ICON_APEX_P = icons/app_32px_apex.png
 
 # Application allowed derivation curves.
 # Possibles curves are: secp256k1, secp256r1, ed25519 and bls12381g1
@@ -102,7 +103,7 @@ ENABLE_NBGL_QRCODE = 1
 ########################################
 # These advanced settings allow to disable some feature that are by
 # default enabled in the SDK `Makefile.standard_app`.
-#DISABLE_STANDARD_APP_FILES = 1 
+#DISABLE_STANDARD_APP_FILES = 1
 #DISABLE_DEFAULT_IO_SEPROXY_BUFFER_SIZE = 1 # To allow custom size declaration
 #DISABLE_STANDARD_APP_DEFINES = 1 # Will set all the following disablers
 #DISABLE_STANDARD_SNPRINTF = 1

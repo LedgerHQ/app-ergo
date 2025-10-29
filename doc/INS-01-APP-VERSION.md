@@ -3,6 +3,7 @@
 Returns the Ledger Application version.
 
 ## Command
+
 | INS | P1 | P2 | Lc |
 | --- | --- | --- | --- |
 | 0x01 | 0x00 | 0x00 | 0x00 |
@@ -15,4 +16,6 @@ Ledger Application checks that **P1**, **P2**, and **Lc** are all set to **0x00*
 | --- | --- | --- | --- |
 | Major version | Minor version | Patch | Debug |
 
-**Debug** flag is set to 0x01 for all debug builds of the Ledger Application. Apps and Wallets should show an error message when this flag is set (debug version of Ledger Application should never be used in any real environment).
+**Debug** flag is set to 0x01 for all debug builds of the Ledger Application.
+Apps and Wallets should show an error message when this flag is set
+(debug version of Ledger Application should never be used in any real environment).

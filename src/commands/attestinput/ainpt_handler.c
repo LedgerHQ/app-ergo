@@ -155,7 +155,7 @@ int handler_attest_input(buffer_t *cdata,
     switch (subcommand) {
         case ATTEST_INPUT_SUBCOMMAND_INIT:
             if (session_or_token != 0x01 && session_or_token != 0x02) {
-                return handler_err(ctx, SW_WRONG_P1P2);
+                return handler_err(ctx, SWO_INCORRECT_P1_P2);
             }
             app_set_current_command(CMD_ATTEST_INPUT_BOX);
             return handle_init(ctx, cdata, session_or_token == 0x02, app_connected_app_id());

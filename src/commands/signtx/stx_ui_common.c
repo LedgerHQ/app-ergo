@@ -51,7 +51,7 @@ uint16_t ui_stx_display_output_state(uint8_t screen, char* title, char* text, vo
             break;
         }
     }
-    return SW_OK;
+    return SWO_SUCCESS;
 }
 
 // Callback for TX UI rendering
@@ -99,5 +99,5 @@ uint16_t ui_stx_display_tx_state(uint8_t screen, char* title, char* text, void* 
         }
     }
 
-    return SW_OK;
+    return SWO_SUCCESS;
 }

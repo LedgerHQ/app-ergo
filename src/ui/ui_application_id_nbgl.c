@@ -1,5 +1,6 @@
 #ifdef HAVE_NBGL
 
+#include <stdio.h>
 #include "ui_application_id.h"
 
 nbgl_layoutTagValue_t ui_application_id_screen(uint32_t app_id,

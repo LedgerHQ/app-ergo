@@ -23,10 +23,10 @@
 #define CHECK_PARAMS_FINISHED(_ctx, _buffer) \
     if (buffer_can_read(_buffer, 1)) return COMMAND_ERROR_HANDLER(_ctx, SW_TOO_MUCH_DATA)
 
-#define CHECK_CALL_RESULT_SW_OK(_ctx, _call)                         \
-    do {                                                             \
-        uint16_t _res = _call;                                       \
-        if (_res != SW_OK) return COMMAND_ERROR_HANDLER(_ctx, _res); \
+#define CHECK_CALL_RESULT_SW_OK(_ctx, _call)                               \
+    do {                                                                   \
+        uint16_t _res = _call;                                             \
+        if (_res != SWO_SUCCESS) return COMMAND_ERROR_HANDLER(_ctx, _res); \
     } while (0)
 
 #define CHECK_WRITE_PARAM(_call) \

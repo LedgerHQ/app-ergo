@@ -95,7 +95,7 @@ static NOINLINE bool ui_stx_operation_output_confirm_action(bool approved, void*
 uint16_t ui_stx_dynamic_display(uint8_t screen, char* title, char* text) {
     strncpy(title, pair_mem_title[screen], 20);
     strncpy(text, pair_mem_text[screen], 70);
-    return SW_OK;
+    return SWO_SUCCESS;
 }
 
 bool ui_stx_add_output_screens(sign_transaction_ui_output_confirm_ctx_t* ctx,

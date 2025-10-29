@@ -1,7 +1,9 @@
 # 0x02 - Get Ledger Application Name
+
 Returns the Ledger Application name.
 
 ## Command
+
 | INS | P1 | P2 | Lc |
 | --- | --- | --- | --- |
 | 0x02 | 0x00 | 0x00 | 0x00 |
