@@ -30,7 +30,7 @@ APPNAME = "Ergo"
 # Application version
 APPVERSION_M = 0
 APPVERSION_N = 0
-APPVERSION_P = 9
+APPVERSION_P = 10
 APPVERSION = "$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)"
 
 # Application source files
